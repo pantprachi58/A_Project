@@ -1,0 +1,127 @@
+// Bootstrap ships as precompiled CSS (imported in app/layout.js) and is
+// themed below via its CSS custom properties (--bs-*), rather than being
+// recompiled from SCSS source — Next.js 16's Turbopack + Dart Sass currently
+// fails to resolve Bootstrap's own internal relative @imports (e.g.
+// "mixins/banner") when Bootstrap's SCSS is @imported from an app stylesheet.
+
+:root {
+  --bs-primary: #ec4899;
+  --bs-primary-rgb: 236, 72, 153;
+  --bs-secondary: #9333ea;
+  --bs-secondary-rgb: 147, 51, 234;
+  --bs-warning: #f97316;
+  --bs-warning-rgb: 249, 115, 22;
+  --bs-success: #22c55e;
+  --bs-info: #2dd4bf;
+  --bs-link-color: #ec4899;
+  --bs-link-color-rgb: 236, 72, 153;
+  --bs-link-hover-color: #ea580c;
+  --bs-link-hover-color-rgb: 234, 88, 12;
+  --bs-body-color: #4b5563;
+  --bs-border-radius: 0.75rem;
+  --bs-border-radius-lg: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--brand-pink);
+  box-shadow: 0 0 0 0.25rem rgba(236, 72, 153, 0.25);
+}
+
+:root {
+  --brand-pink: #ec4899;
+  --brand-orange: #f97316;
+  --brand-orange-dark: #ea580c;
+  --brand-purple: #9333ea;
+  --brand-purple-light: #a855f7;
+  --brand-teal: #2dd4bf;
+  --gradient-brand: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-orange) 50%, var(--brand-purple) 100%);
+  --gradient-brand-soft: linear-gradient(135deg, #fce7f3 0%, #fef3c7 50%, #f3e8ff 100%);
+  --font-script: "Dancing Script", cursive;
+  --section-padding: 6rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.gradient-text {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gradient {
+  background: var(--gradient-brand);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.35);
+  }
+}
+
+.section-eyebrow {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--brand-pink);
+}
+
+.section-title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.script-text {
+  font-family: var(--font-script);
+}
+
+/* ---- shared keyframes (small decorative flourishes not worth a library) ---- */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.float-anim {
+  animation: float 5s ease-in-out infinite;
+}
+
+.pulse-anim {
+  animation: pulseSoft 2.4s ease-in-out infinite;
+}

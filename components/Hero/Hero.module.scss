@@ -1,0 +1,33 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.signature {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  text-transform: none;
+  font-size: clamp(3rem, 9vw, 6rem);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .signature {
+    white-space: normal;
+    width: 90%;
+  }
+}

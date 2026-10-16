@@ -1,0 +1,86 @@
+.portfolio {
+  padding: var(--section-padding) 0;
+  background: #fff;
+}
+
+.lead {
+  color: #6b7280;
+}
+
+.filters {
+  padding: 0 0.5rem;
+}
+
+.filterBtn {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: var(--brand-pink);
+    color: var(--brand-pink);
+  }
+}
+
+.filterBtnActive {
+  background: var(--gradient-brand);
+  border-color: transparent;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.itemBtn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.itemFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 0.85rem;
+  overflow: hidden;
+}
+
+.itemImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.itemBtn:hover .itemImage {
+  transform: scale(1.1);
+}
+
+.itemOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.9rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  span {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: left;
+  }
+}
+
+.itemBtn:hover .itemOverlay {
+  opacity: 1;
+}

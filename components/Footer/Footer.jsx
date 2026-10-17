@@ -1,4 +1,5 @@
-import { Camera, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { navLinks, siteConfig } from "@/lib/siteData";
 import styles from "./Footer.module.scss";
@@ -15,12 +16,7 @@ export default function Footer() {
       <div className="container">
         <div className="row gy-4">
           <div className="col-lg-4">
-            <div className={`d-flex align-items-center gap-2 mb-3 ${styles.brand}`}>
-              <span className={styles.brandIcon}>
-                <Camera size={18} />
-              </span>
-              <span className="script-text">{siteConfig.name}</span>
-            </div>
+            <Image src="/images/apLogo.png" alt={siteConfig.name} width={1983} height={793} className={`mb-2 ${styles.logo}`} />
             <p className={styles.desc}>{siteConfig.heroSubtitle}</p>
             <div className="d-flex gap-2 mt-3">
               {socialLinks.map(({ icon: Icon, label, href }) => (

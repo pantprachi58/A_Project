@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Camera, Phone } from "lucide-react";
+import Image from "next/image";
+import { Phone } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/siteData";
 import QuotationModal from "@/components/QuotationModal/QuotationModal";
 import styles from "./Navbar.module.scss";
@@ -23,13 +24,8 @@ export default function Navbar() {
   return (
     <nav className={`navbar navbar-expand-lg fixed-top ${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className="container">
-        <a className={`navbar-brand d-flex align-items-center gap-2 ${styles.brand}`} href="#home">
-          <span className={styles.brandIcon}>
-            <Camera size={20} />
-          </span>
-          <span className={`script-text ${styles.brandText}`}>
-            {siteConfig.brand} <span className={styles.brandSuffix}>{siteConfig.brandSuffix}</span>
-          </span>
+        <a className={`navbar-brand d-flex align-items-center gap-2 ${styles.brand}`} href="/">
+          <Image src="/images/apLogo.png" alt={siteConfig.name} width={1983} height={793} priority className={styles.logo} />
         </a>
 
         <button
